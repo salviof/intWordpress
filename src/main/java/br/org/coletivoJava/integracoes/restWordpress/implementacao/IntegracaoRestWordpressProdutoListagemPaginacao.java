@@ -35,14 +35,21 @@ public class IntegracaoRestWordpressProdutoListagemPaginacao
         String chavePrivada = getTokenGestao().getTokenCompleto().getComoTokenChavePublicaPrivada().getChavePrivada();
         String urlServidor = getConfiguracao().getPropriedade(FabConfigWordpressApi.URLWORDPRESS);
 
-        OAuthConfig config = new OAuthConfig(urlServidor, chavePublica,
-                chavePrivada);
-        Map<String, String> parametros = new HashMap();
-        parametros.put("page", getParametros()[0].toString());
-        parametros.put("per_page", "30");
+        if (urlRequisicao.startsWith("https://")) {
 
-        String assinaturaRequisicao = UtilIntegradorWordpress.getAsQueryString(config, urlRequisicao, HttpMethod.GET, parametros);
-        String url = UtilIntegradorWordpress.buildUrlRequisicao(urlRequisicao, assinaturaRequisicao);
-        return url;
+            return urlRequisicao + "?page=" + getParametros()[0].toString() + "&per_page=30";
+        } else {
+            OAuthConfig config = new OAuthConfig(urlServidor, chavePublica,
+                    chavePrivada);
+            Map<String, String> parametros = new HashMap();
+            parametros.put("page", getParametros()[0].toString());
+            parametros.put("per_page", "30");
+
+            String assinaturaRequisicao = UtilIntegradorWordpress.getAsQueryString(config, urlRequisicao, HttpMethod.GET, parametros);
+            String url = UtilIntegradorWordpress.buildUrlRequisicao(urlRequisicao, assinaturaRequisicao);
+            return url;
+
+        }
+
     }
 }

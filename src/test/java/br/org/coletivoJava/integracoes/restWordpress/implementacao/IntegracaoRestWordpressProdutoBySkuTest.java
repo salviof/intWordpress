@@ -33,14 +33,7 @@ public class IntegracaoRestWordpressProdutoBySkuTest extends TestesApiRest {
         IntegracaoRestWordpressProdutoBySku integracao = (IntegracaoRestWordpressProdutoBySku) FabApiRestWordpressProduto.PRODUTO_BY_SKU.getAcao("123");
         ItfResposta resposata = integracao.getResposta();
         String produtostrJson = resposata.getRetorno().toString();
-        ProdutoWoocomerceDTO produtoDTO = UtilDTOProdutoWocomerce.getProdutoDTO(produtostrJson);
-
-        System.out.println("id: " + produtoDTO.getId());
-        System.out.println("nome: " + produtoDTO.getNome());
-        System.out.println("SKU: " + produtoDTO.getSKU());
-        System.out.println("PRCO: " + produtoDTO.getPreco());
-        System.out.println("Quantidade: " + produtoDTO.getEstoqueQuantidade());
-        System.out.println("___-___");
+        ProdutoWoocomerceDTO produtoDTO = UtilDTOProdutoWocomerce.getProdutoDTOPrimeiroDaLista(produtostrJson);
 
         Assert.assertNotNull("Produto não encontrado", produtoDTO);
 

@@ -17,9 +17,13 @@ public class ProdutoWoocomerceDTO {
     private int id;
     private String SKU;
     private String nome;
+    private String urlFoto;
     private String descricao;
     private int estoqueQuantidade;
     private double preco;
+    private double precoPromocional;
+    private String jsonCompleto;
+    private boolean permitidoEstoqueSobConsulta;
 
     public int getId() {
         return id;
@@ -67,6 +71,38 @@ public class ProdutoWoocomerceDTO {
 
     public void setPreco(double preco) {
         this.preco = preco;
+    }
+
+    public String getJsonCompleto() {
+        return jsonCompleto;
+    }
+
+    public void setJsonCompleto(String jsonCompleto) {
+        this.jsonCompleto = jsonCompleto;
+    }
+
+    public String getUrlFoto() {
+        return urlFoto;
+    }
+
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
+    }
+
+    public boolean isPermitidoEstoqueSobConsulta() {
+        return permitidoEstoqueSobConsulta;
+    }
+
+    public void setPermitidoEstoqueSobConsulta(boolean permitidoEstoqueSobConsulta) {
+        this.permitidoEstoqueSobConsulta = permitidoEstoqueSobConsulta;
+    }
+
+    public double getPrecoPromocional() {
+        return precoPromocional;
+    }
+
+    public void setPrecoPromocional(double precoPromocional) {
+        this.precoPromocional = precoPromocional;
     }
 
 }

@@ -21,9 +21,21 @@ import java.util.logging.Logger;
  */
 public class UtilDTOProdutoWocomerce {
 
-    public static ProdutoWoocomerceDTO getProdutoDTO(String pJson) {
+    public static ProdutoWoocomerceDTO getProdutoDTOPrimeiroDaLista(String pJson) {
 
         return getProdutosDTO(pJson).get(0);
+    }
+
+    public static ProdutoWoocomerceDTO getProdutoDTOREgistroUnico(String pJson) {
+
+        try {
+            ProdutoWoocomerceDTO produto = new ObjectMapper().readValue(pJson, ProdutoWoocomerceDTO.class);
+            return produto;
+        } catch (JsonProcessingException ex) {
+            Logger.getLogger(UtilDTOProdutoWocomerce.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return null;
     }
 
     public static List<ProdutoWoocomerceDTO> getProdutosDTO(String pJson) {

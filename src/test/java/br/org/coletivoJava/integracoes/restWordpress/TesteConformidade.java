@@ -5,9 +5,11 @@
  */
 package br.org.coletivoJava.integracoes.restWordpress;
 
+import br.org.coletivoJava.integracoes.restWordpress.api.FabConfigWordpressApi;
 import br.org.coletivoJava.integracoes.restWordpress.api.produto.FabApiRestWordpressProduto;
 
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
+import com.super_bits.modulosSB.SBCore.ConfigGeral.arquivosConfiguracao.ConfigModulo;
 import com.super_bits.modulosSB.SBCore.integracao.rocketChat.implementacaoRCRest.ConfigCoreWordpressTestesRegraNegocio;
 import org.junit.Test;
 import testes.testesSupers.TestesApiRest;
@@ -22,6 +24,8 @@ public class TesteConformidade extends TestesApiRest {
     public void testes() {
         SBCore.configurar(new ConfigCoreWordpressTestesRegraNegocio(), SBCore.ESTADO_APP.DESENVOLVIMENTO);
         gerarCodigos(FabApiRestWordpressProduto.class);
+        ConfigModulo configuracaoWP = SBCore.getConfigModulo(FabConfigWordpressApi.class);
+        configuracaoWP.getPropriedade(FabConfigWordpressApi.CHAVE_DE_ACESSO_PUBLICA);
 
 //        RespostaWebServiceSimples resposta = FabApiRestRokcetChatV1Users.DIRECT_MENSAGENS_CONTADORES.getAcao().getResposta();
         //      System.out.println(resposta);

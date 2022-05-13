@@ -19,7 +19,7 @@ import com.super_bits.modulosSB.SBCore.modulos.ManipulaArquivo.importacao.FabTip
  * @author sfurbino
  */
 @InfoConfigRestClientIntegracao(enderecosDocumentacao = "https://woocommerce.github.io/woocommerce-rest-api-docs/v3.html#introduction",
-        tipoAutenticacao = FabTipoAutenticacaoRest.USUARIO_SENHA_SIMPLES,
+        tipoAutenticacao = FabTipoAutenticacaoRest.CHAVE_PUBLICA_PRIVADA,
         nomeIntegracao = FabConfigWordpressApi.NOME_APLICACAO,
         configuracao = FabConfigWordpressApi.class
 )
@@ -33,11 +33,11 @@ public enum FabApiRestWordpressProduto implements ItfFabricaIntegracaoRest {
             tipoConexao = FabTipoConexaoRest.GET,
             urlDocumentacao = "https://woocommerce.github.io/woocommerce-rest-api-docs/v3.html#view-list-of-products")
     PRODUTO_LISTAGEM_PAGINACAO,
-    @InfoConsumoRestService(getPachServico = "/wp-json/wc/v3/products/<id>",
+    @InfoConsumoRestService(getPachServico = "/wp-json/wc/v3/products/{0}",
             tipoConexao = FabTipoConexaoRest.PUT,
             tipoInformacaoEnviada = FabTipoArquivoImportacao.JSON,
             parametrosGet = "id",
-            parametrosPost = {"price", "stock_quantity"},
+            parametrosPost = {"regular_price", "sale_price", "stock_quantity", "in_stock", "stock_quantity"},
             urlDocumentacao = "https://documenter.getpostman.com/view/9632769/SWLiamS3#b4b49c87-4cec-483b-9f36-afd2b078f806"
     )
     PRODUTO_ATUALIZAR_PRECO_ESTOQUE,
