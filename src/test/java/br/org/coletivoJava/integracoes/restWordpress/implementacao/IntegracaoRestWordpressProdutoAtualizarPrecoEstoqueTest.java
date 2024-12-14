@@ -48,7 +48,7 @@ public class IntegracaoRestWordpressProdutoAtualizarPrecoEstoqueTest extends Tes
         ProdutoWoocomerceDTO produtoAtualizadoDTO = UtilDTOProdutoWocomerce.getProdutoDTOREgistroUnico(produtostrJson);
         Assert.assertNotNull("Produto não encontrado", produtoAtualizadoDTO);
         Assert.assertEquals("O estoque não parece ", estoque, produtoAtualizadoDTO.getEstoqueQuantidade());
-        Assert.assertTrue("O valor não foi atualizado ", UtilSBCoreNumerosOperacoes.compararDouble(valorREgular, produtoAtualizadoDTO.getPreco()));
+        Assert.assertTrue("O valor não foi atualizado ", UtilSBCoreNumerosOperacoes.compararDoubleAproximado(valorREgular, produtoAtualizadoDTO.getPreco()));
 
     }
 

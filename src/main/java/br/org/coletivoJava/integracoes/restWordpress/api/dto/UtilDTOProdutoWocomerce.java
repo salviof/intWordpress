@@ -11,6 +11,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
+import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,6 +34,8 @@ public class UtilDTOProdutoWocomerce {
             return produto;
         } catch (JsonProcessingException ex) {
             Logger.getLogger(UtilDTOProdutoWocomerce.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(UtilDTOProdutoWocomerce.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return null;
@@ -52,7 +55,10 @@ public class UtilDTOProdutoWocomerce {
         } catch (JsonProcessingException ex) {
             Logger.getLogger(UtilDTOProdutoWocomerce.class.getName()).log(Level.SEVERE, null, ex);
             return null;
+        } catch (IOException ex) {
+            Logger.getLogger(UtilDTOProdutoWocomerce.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return null;
     }
 
 }

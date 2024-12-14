@@ -59,12 +59,12 @@ public class IntegracaoRestWordpressProdutoAtualizarPrecoEstoque
     @Override
     public String gerarCorpoRequisicao() {
 
-        double precoRegular = (double) parametros[1];
-        double precopromocional = (double) parametros[2];
-        boolean temPrecoPromocional = (boolean) parametros[3];
+        double precoRegular = (double) parametros.get(1);
+        double precopromocional = (double) parametros.get(2);
+        boolean temPrecoPromocional = (boolean) parametros.get(3);
 
-        int estoque = (int) parametros[4];
-        boolean estoqSobEncomenda = (boolean) parametros[5];
+        int estoque = (int) parametros.get(4);
+        boolean estoqSobEncomenda = (boolean) parametros.get(5);
         boolean emEstoque = true;
         if (!estoqSobEncomenda) {
             if (estoque == 0) {

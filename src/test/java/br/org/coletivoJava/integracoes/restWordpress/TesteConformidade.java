@@ -23,7 +23,7 @@ public class TesteConformidade extends TestesApiRest {
     @Test
     public void testes() {
         SBCore.configurar(new ConfigCoreWordpressTestesRegraNegocio(), SBCore.ESTADO_APP.DESENVOLVIMENTO);
-        gerarCodigos(FabApiRestWordpressProduto.class);
+        gerarCodigosChamadasEndpoint(FabApiRestWordpressProduto.class);
         ConfigModulo configuracaoWP = SBCore.getConfigModulo(FabConfigWordpressApi.class);
         configuracaoWP.getPropriedade(FabConfigWordpressApi.CHAVE_DE_ACESSO_PUBLICA);
 
