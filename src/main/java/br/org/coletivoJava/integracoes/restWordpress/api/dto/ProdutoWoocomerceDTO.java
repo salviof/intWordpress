@@ -14,7 +14,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 @JsonDeserialize(using = AdaptadorProdutoWoocomerceJsonToDTO.class)
 public class ProdutoWoocomerceDTO {
 
-    private int id;
+    private Long id;
     private String SKU;
     private String nome;
     private String urlFoto;
@@ -25,11 +25,11 @@ public class ProdutoWoocomerceDTO {
     private String jsonCompleto;
     private boolean permitidoEstoqueSobConsulta;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
