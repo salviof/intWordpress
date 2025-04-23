@@ -34,7 +34,7 @@ public class IntegracaoRestWordpressProdutoAtualizarPrecoEstoqueTest extends Tes
         // TODO review the generated test code and remove the default call to fail.
 
         ProdutoWoocomerceDTO produtoDTOBySku = UtilDTOProdutoWocomerce.getProdutoDTOPrimeiroDaLista(FabApiRestWordpressProduto.PRODUTO_BY_SKU.getAcao("123").getResposta().getRetorno().toString());
-        int id = produtoDTOBySku.getId();
+        Long id = produtoDTOBySku.getId();
         int estoque = 66;
         boolean estoqueSobConsulta = false;
         boolean consideradoDEsconto = false;
@@ -55,7 +55,7 @@ public class IntegracaoRestWordpressProdutoAtualizarPrecoEstoqueTest extends Tes
     @Test
     public void _2precoPromocional() {
         ProdutoWoocomerceDTO produtoDTOBySku = UtilDTOProdutoWocomerce.getProdutoDTOPrimeiroDaLista(FabApiRestWordpressProduto.PRODUTO_BY_SKU.getAcao("123").getResposta().getRetorno().toString());
-        int id = produtoDTOBySku.getId();
+        Long id = produtoDTOBySku.getId();
         int estoque = 30;
         boolean estoqueSobConsulta = false;
         boolean consideradoDEsconto = false;

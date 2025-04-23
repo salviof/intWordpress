@@ -62,7 +62,7 @@ public class ServicoWordpress {
         try {
 
             ProdutoWoocomerceDTO produtoDTOBySku = UtilDTOProdutoWocomerce.getProdutoDTOPrimeiroDaLista(FabApiRestWordpressProduto.PRODUTO_BY_SKU.getAcao(String.valueOf(pSku)).getResposta().getRetorno().toString());
-            int idProduto = produtoDTOBySku.getId();
+            Long idProduto = produtoDTOBySku.getId();
             ItfResposta resposta = FabApiRestWordpressProduto.PRODUTO_ATUALIZAR_PRECO_ESTOQUE.getAcao(idProduto, pValoRegular, pvalorProocional, pConsideradoDesconto, pEstoque, pEstoqueSobConsulta).getResposta();
             if (!resposta.isSucesso()) {
                 throw new UnsupportedOperationException("Falha Atualizando produto");

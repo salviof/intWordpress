@@ -35,7 +35,7 @@ public class AdaptadorProdutoWoocomerceJsonToDTO extends StdDeserializer<Produto
         ObjectCodec oc = jp.getCodec();
         ObjectNode node = oc.readTree(jp);
         produto.setSKU(node.get("sku").asText());
-        produto.setId(node.get("id").intValue());
+        produto.setId(node.get("id").asLong());
         double precoJsonWordpress = node.get("price").asDouble();
         produto.setPreco(precoJsonWordpress);
         produto.setNome(node.get("name").asText());
