@@ -8,7 +8,7 @@ import com.icoderman.woocommerce.HttpMethod;
 import com.icoderman.woocommerce.oauth.OAuthConfig;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.implementacao.AcaoApiIntegracaoAbstrato;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.FabTipoAgenteClienteApi;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +19,7 @@ public class IntegracaoRestWordpressProdutoListagemPaginacao
 
     public IntegracaoRestWordpressProdutoListagemPaginacao(
             final FabTipoAgenteClienteApi pTipoAgente,
-            final ItfUsuario pUsuario, final java.lang.Object... pParametro) {
+            final ComoUsuario pUsuario, final java.lang.Object... pParametro) {
         super(FabApiRestWordpressProduto.PRODUTO_LISTAGEM_PAGINACAO,
                 pTipoAgente, pUsuario, pParametro);
     }

@@ -7,7 +7,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.implementacao.AcaoApiIntegracaoAbstrato;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.FabTipoAgenteClienteApi;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.logging.Level;
@@ -40,7 +40,7 @@ public class IntegracaoRestWordpressProdutoAtualizarPrecoEstoque
 
     public IntegracaoRestWordpressProdutoAtualizarPrecoEstoque(
             final FabTipoAgenteClienteApi pTipoAgente,
-            final ItfUsuario pUsuario, final java.lang.Object... pParametro) {
+            final ComoUsuario pUsuario, final java.lang.Object... pParametro) {
         super(FabApiRestWordpressProduto.PRODUTO_ATUALIZAR_PRECO_ESTOQUE,
                 pTipoAgente, pUsuario, pParametro);
     }

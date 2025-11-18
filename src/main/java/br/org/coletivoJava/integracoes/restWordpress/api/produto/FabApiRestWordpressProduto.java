@@ -6,7 +6,7 @@
 package br.org.coletivoJava.integracoes.restWordpress.api.produto;
 
 import br.org.coletivoJava.integracoes.restWordpress.api.FabConfigWordpressApi;
-import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.ItfFabricaIntegracaoRest;
+import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.ComoFabricaIntegracaoRest;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.conexaoWebServiceClient.FabTipoConexaoRest;
 
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.WS.conexaoWebServiceClient.InfoConsumoRestService;
@@ -23,7 +23,7 @@ import com.super_bits.modulosSB.SBCore.modulos.ManipulaArquivo.importacao.FabTip
         nomeIntegracao = FabConfigWordpressApi.NOME_APLICACAO,
         configuracao = FabConfigWordpressApi.class
 )
-public enum FabApiRestWordpressProduto implements ItfFabricaIntegracaoRest {
+public enum FabApiRestWordpressProduto implements ComoFabricaIntegracaoRest {
 
     @InfoConsumoRestService(getPachServico = "/wp-json/wc/v3/products",
             tipoConexao = FabTipoConexaoRest.GET,

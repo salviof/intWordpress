@@ -7,7 +7,7 @@ import com.super_bits.modulosSB.SBCore.integracao.libRestClient.implementacao.ge
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.token.ItfTokenDeAcessoExterno;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.FabTipoAgenteClienteApi;
 import com.super_bits.modulosSB.SBCore.integracao.libRestClient.api.token.TokenDeAcessoExternoChavePublicaPrivada;
-import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ItfUsuario;
+import com.super_bits.modulosSB.SBCore.modulos.objetos.registro.Interfaces.basico.ComoUsuario;
 
 @InfoIntegracaoRestWordpressProduto(tipo = FabApiRestWordpressProduto.PRODUTO_BY_SKU)
 public class GestaoTokenRestWordpress extends GestaoTokenChaveUnica {
@@ -31,7 +31,7 @@ public class GestaoTokenRestWordpress extends GestaoTokenChaveUnica {
     }
 
     public GestaoTokenRestWordpress(final FabTipoAgenteClienteApi pTipoAgente,
-            final ItfUsuario pUsuario) {
+            final ComoUsuario pUsuario) {
         super(FabApiRestWordpressProduto.class, pTipoAgente, pUsuario);
     }
 
