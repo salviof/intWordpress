@@ -9,7 +9,7 @@ import br.org.coletivoJava.integracoes.restWordpress.api.dto.ProdutoWoocomerceDT
 import br.org.coletivoJava.integracoes.restWordpress.api.dto.UtilDTOProdutoWocomerce;
 import br.org.coletivoJava.integracoes.restWordpress.api.produto.FabApiRestWordpressProduto;
 import com.super_bits.modulosSB.SBCore.ConfigGeral.SBCore;
-import com.super_bits.modulosSB.SBCore.UtilGeral.UtilSBCoreNumerosOperacoes;
+import com.super_bits.modulosSB.SBCore.UtilGeral.UtilCRCNumerosOperacoes;
 import com.super_bits.modulosSB.SBCore.integracao.rocketChat.implementacaoRCRest.ConfigCoreWordpressTestesRegraNegocio;
 import com.super_bits.modulosSB.SBCore.modulos.Controller.Interfaces.ItfResposta;
 import org.junit.Assert;
@@ -48,7 +48,7 @@ public class IntegracaoRestWordpressProdutoAtualizarPrecoEstoqueTest extends Tes
         ProdutoWoocomerceDTO produtoAtualizadoDTO = UtilDTOProdutoWocomerce.getProdutoDTOREgistroUnico(produtostrJson);
         Assert.assertNotNull("Produto não encontrado", produtoAtualizadoDTO);
         Assert.assertEquals("O estoque não parece ", estoque, produtoAtualizadoDTO.getEstoqueQuantidade());
-        Assert.assertTrue("O valor não foi atualizado ", UtilSBCoreNumerosOperacoes.compararDoubleAproximado(valorREgular, produtoAtualizadoDTO.getPreco()));
+        Assert.assertTrue("O valor não foi atualizado ", UtilCRCNumerosOperacoes.compararDoubleAproximado(valorREgular, produtoAtualizadoDTO.getPreco()));
 
     }
 
